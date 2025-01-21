@@ -1,0 +1,72 @@
+import React, { useState, useEffect } from 'react';
+import { HiMenu, HiX } from 'react-icons/hi';
+
+const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  return (
+    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'}`}>
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-20">
+          {/* Mobile Menu Button */}
+          <button
+            className={`lg:hidden text-2xl ${isScrolled ? 'text-black' : 'text-white'}`}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <HiX /> : <HiMenu />}
+          </button>
+
+          {/* Logo */}
+          <div className="absolute left-1/2 transform -translate-x-1/2">
+            <img
+              src={isScrolled ? 'logo-b.png' : 'logo-w.png'}
+              alt="Apartment Hotel"
+              className="h-16"
+            />
+          </div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-8">
+            <a href="#about" className={`hover:text-gray-600 ${isScrolled ? 'text-black' : 'text-white'}`}>About</a>
+            <a href="#advantages" className={`hover:text-gray-600 ${isScrolled ? 'text-black' : 'text-white'}`}>Advantages</a>
+            <a href="#architecture" className={`hover:text-gray-600 ${isScrolled ? 'text-black' : 'text-white'}`}>Architecture</a>
+            <a href="#living-areas" className={`hover:text-gray-600 ${isScrolled ? 'text-black' : 'text-white'}`}>Living Areas</a>
+            <a href="#floor-plans" className={`hover:text-gray-600 ${isScrolled ? 'text-black' : 'text-white'}`}>Floor Plans</a>
+          </nav>
+
+          {/* Phone Number */}
+          <a
+            href="tel:+1234567890"
+            className={`hidden lg:block hover:text-gray-600 ${isScrolled ? 'text-black' : 'text-white'}`}
+          >
+            +1 (234) 567-890
+          </a>
+        </div>
+
+        {/* Mobile Navigation */}
+        <nav className={`lg:hidden fixed top-0 left-0 w-full h-full bg-white flex flex-col items-center justify-center transition-transform duration-300 ${isOpen ? 'transform translate-x-0' : 'transform -translate-x-full'}`}>
+          <a href="#about" className="text-gray-800 hover:text-gray-600 text-2xl mb-4" onClick={() => setIsOpen(false)}>About</a>
+          <a href="#advantages" className="text-gray-800 hover:text-gray-600 text-2xl mb-4" onClick={() => setIsOpen(false)}>Advantages</a>
+          <a href="#architecture" className="text-gray-800 hover:text-gray-600 text-2xl mb-4" onClick={() => setIsOpen(false)}>Architecture</a>
+          <a href="#living-areas" className="text-gray-800 hover:text-gray-600 text-2xl mb-4" onClick={() => setIsOpen(false)}>Living Areas</a>
+          <a href="#floor-plans" className="text-gray-800 hover:text-gray-600 text-2xl mb-4" onClick={() => setIsOpen(false)}>Floor Plans</a>
+          <a href="tel:+1234567890" className="text-gray-800 hover:text-gray-600 text-2xl mb-4">+1 (234) 567-890</a>
+        </nav>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
