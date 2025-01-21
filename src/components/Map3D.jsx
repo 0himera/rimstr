@@ -58,7 +58,7 @@ const Map3D = () => {
 
       {selectedApartment && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-white p-4 rounded-lg max-w-lg w-full">
+          <div className="bg-white p-4 rounded-lg max-w-lg w-full z-50">
             <h3 className="text-xl mb-4">{selectedApartment.name}</h3>
             <img src={selectedApartment.floorPlan} alt={`${selectedApartment.name} Floor Plan`} className="w-full h-auto mb-4" />
             <button onClick={closeModal} className="bg-primary-700 text-white px-4 py-2 rounded">Close</button>
