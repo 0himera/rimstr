@@ -25,25 +25,25 @@ const FloorPlans = () => {
     },
     {
       id: 2,
-      name: "Одномкомнатные апартаменты",
+      name: "1-комнатная",
       size: "39m²",
       image: "/1com39.png"
     },
     {
       id: 3,
-      name: "Двухкомнатные апартаменты",
+      name: "2-комнатная",
       size: "59m²",
       image: "/2com59sqr2.png"
     },
     {
       id: 4,
-      name: "Двухкомнатные апартаменты",
+      name: "2-комнатная",
       size: "66m²",
       image: "/e2com66sqr2.png"
     },
     {
       id: 5,
-      name: "Двухкомнатные апартаменты",
+      name: "2-комнатная",
       size: "70m²",
       image: "/e2com70sqr2.png"
     }
@@ -62,36 +62,33 @@ const FloorPlans = () => {
           
           <Swiper
             modules={[Navigation, Pagination]}
-            spaceBetween={30}
-            slidesPerView={1.5}
-            centeredSlides={true}
+            spaceBetween={20}
+            slidesPerView={4}
             navigation
             pagination={{ clickable: true }}
-            className="h-[550px]  rounded-lg overflow-hidden"
+            className="h-[550px] rounded-lg overflow-hidden"
           >
             {floorPlans.map((plan) => (
               <SwiperSlide key={plan.id}>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <div className="bg-gray-100 rounded-lg p-3 sm:w-5/6">
-                    <img
-                      src={plan.image}
-                      alt={plan.name}
-                      className="w-full object-contain rounded-lg"
-                    />
+                <div className="bg-gray-100 w-[340px] rounded-lg p-3 flex flex-col items-center">
+                  <img
+                    src={plan.image}
+                    alt={plan.name}
+                    className="w-72 h-72 object-cover rounded-lg mb-4"
+                  />
+                  <div className="flex justify-between w-72 px-4">
+                    <h3 className="text-xl sm:text-2xl font-bold">{plan.name}</h3>
+                    <p className="text-xl text-gray-600">{plan.size}</p>
                   </div>
-                  <div className="flex flex-col justify-center p-8">
-                    <h3 className="text-xl sm:text-3xl font-bold mb-4">{plan.name}</h3>
-                    <p className="text-xl text-gray-600 mb-8">Площадь: {plan.size}</p>
-                    <button
-                      onClick={() => {
-                        setSelectedPlan(plan);
-                        setShowModal(true);
-                      }}
-                      className="bg-primary-800 text-white lg:mr-36 py-4 rounded-lg hover:bg-primary-700 transition-colors lg:mt-8"
-                    >
-                      Узнать больше
-                    </button>
-                  </div>
+                  <button
+                    onClick={() => {
+                      setSelectedPlan(plan);
+                      setShowModal(true);
+                    }}
+                    className="mt-4 w-64 bg-blue-500 text-white py-2 px-4 rounded-lg"
+                  >
+                    Узнать больше
+                  </button>
                 </div>
               </SwiperSlide>
             ))}
