@@ -19,21 +19,33 @@ const FloorPlans = () => {
   const floorPlans = [
     {
       id: 1,
-      name: "Studio Apartment",
-      size: "45m²",
-      image: "https://0.db-estate.cdn.pik-service.ru/layout/2022/12/19/2_sm_1ns1__3.9-1_s_a_90_zo4JwSk97wXCjfar.svg"
+      name: "Студия",
+      size: "32m²",
+      image: "/studio32sqr.png"
     },
     {
       id: 2,
-      name: "One Bedroom",
-      size: "65m²",
-      image: "https://0.db-estate.cdn.pik-service.ru/layout/2023/10/23/13_270_MfeH5hDVNEofHVyR.svg"
+      name: "Одномкомнатные апартаменты",
+      size: "39m²",
+      image: "/1com39.png"
     },
     {
       id: 3,
-      name: "Two Bedroom",
-      size: "85m²",
-      image: "https://0.db-estate.cdn.pik-service.ru/layout/2024/12/13/8_st_2ks_(6.3)t021_8.7x7.2_a_v1_270_ztNQcZAWm2X5hK9d.svg"
+      name: "Двухкомнатные апартаменты",
+      size: "59m²",
+      image: "/2com59sqr2.png"
+    },
+    {
+      id: 4,
+      name: "Двухкомнатные апартаменты",
+      size: "66m²",
+      image: "/e2com66sqr2.png"
+    },
+    {
+      id: 5,
+      name: "Двухкомнатные апартаменты",
+      size: "70m²",
+      image: "/e2com70sqr2.png"
     }
   ];
 
@@ -46,29 +58,30 @@ const FloorPlans = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="section-title text-center mb-12">Floor Plans</h2>
+          <h2 className="section-title text-center mb-12">Планировки</h2>
           
           <Swiper
             modules={[Navigation, Pagination]}
             spaceBetween={30}
-            slidesPerView={1}
+            slidesPerView={1.5}
+            centeredSlides={true}
             navigation
             pagination={{ clickable: true }}
-            className="h-[660px]"
+            className="h-[550px]  rounded-lg overflow-hidden"
           >
             {floorPlans.map((plan) => (
               <SwiperSlide key={plan.id}>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 h-full">
-                  <div className="bg-gray-100 rounded-lg p-4 lg:w-5/6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  <div className="bg-gray-100 rounded-lg p-3 sm:w-5/6">
                     <img
                       src={plan.image}
                       alt={plan.name}
-                      className="w-full object-cover"
+                      className="w-full object-contain rounded-lg"
                     />
                   </div>
                   <div className="flex flex-col justify-center p-8">
-                    <h3 className="text-3xl font-bold mb-4">{plan.name}</h3>
-                    <p className="text-xl text-gray-600 mb-8">Size: {plan.size}</p>
+                    <h3 className="text-xl sm:text-3xl font-bold mb-4">{plan.name}</h3>
+                    <p className="text-xl text-gray-600 mb-8">Площадь: {plan.size}</p>
                     <button
                       onClick={() => {
                         setSelectedPlan(plan);
@@ -76,7 +89,7 @@ const FloorPlans = () => {
                       }}
                       className="bg-primary-800 text-white lg:mr-36 py-4 rounded-lg hover:bg-primary-700 transition-colors lg:mt-8"
                     >
-                      Learn More
+                      Узнать больше
                     </button>
                   </div>
                 </div>
@@ -93,21 +106,21 @@ const FloorPlans = () => {
             <h3 className="text-2xl font-bold mb-4">{selectedPlan.name}</h3>
             <form className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700">Name</label>
+                <label className="block text-sm font-medium text-gray-700">Имя</label>
                 <input
                   type="text"
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring focus:ring-primary-200"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700">Phone</label>
+                <label className="block text-sm font-medium text-gray-700">Номер</label>
                 <input
                   type="tel"
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring focus:ring-primary-200"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700">Email</label>
+                <label className="block text-sm font-medium text-gray-700">Почта</label>
                 <input
                   type="email"
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring focus:ring-primary-200"
@@ -119,13 +132,13 @@ const FloorPlans = () => {
                   onClick={() => setShowModal(false)}
                   className="px-4 py-2 text-gray-600 hover:text-gray-800"
                 >
-                  Cancel
+                  Отмена
                 </button>
                 <button
                   type="submit"
                   className="px-4 py-2 bg-primary-800 text-white rounded-lg hover:bg-primary-700"
                 >
-                  Submit
+                  Отправить
                 </button>
               </div>
             </form>
