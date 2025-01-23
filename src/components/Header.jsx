@@ -22,7 +22,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Mobile Menu Button */}
           <button
-            className={`lg:hidden text-2xl ${isScrolled ? 'text-black' : 'text-white'}`}
+            className={`xl:hidden text-2xl ${isScrolled ? 'text-black' : 'text-white'}`}
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <HiX /> : <HiMenu />}
@@ -38,7 +38,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden xl:flex items-center space-x-8">
             <a href="#about" className={`hover:text-gray-600 ${isScrolled ? 'text-black' : 'text-white'}`}>About</a>
             <a href="#advantages" className={`hover:text-gray-600 ${isScrolled ? 'text-black' : 'text-white'}`}>Advantages</a>
             <a href="#architecture" className={`hover:text-gray-600 ${isScrolled ? 'text-black' : 'text-white'}`}>Architecture</a>
@@ -49,14 +49,14 @@ const Header = () => {
           {/* Phone Number */}
           <a
             href="tel:+1234567890"
-            className={`hidden lg:block hover:text-gray-600 ${isScrolled ? 'text-black' : 'text-white'}`}
+            className={`hidden md:block hover:text-gray-600 ${isScrolled ? 'text-black' : 'text-white'}`}
           >
             +1 (234) 567-890
           </a>
         </div>
 
         {/* Mobile Navigation */}
-        <nav className={`lg:hidden fixed top-0 left-0 w-full h-full bg-white flex flex-col items-center justify-center transition-transform duration-300 ${isOpen ? 'transform translate-x-0' : 'transform -translate-x-full'}`}>
+        <nav className={`md:hidden fixed top-0 left-0 w-full h-full bg-white flex flex-col items-center justify-center transition-transform duration-300 ${isOpen ? 'transform translate-x-0' : 'transform -translate-x-full'}`}>
           <a href="#about" className="text-gray-800 hover:text-gray-600 text-2xl mb-4" onClick={() => setIsOpen(false)}>About</a>
           <a href="#advantages" className="text-gray-800 hover:text-gray-600 text-2xl mb-4" onClick={() => setIsOpen(false)}>Advantages</a>
           <a href="#architecture" className="text-gray-800 hover:text-gray-600 text-2xl mb-4" onClick={() => setIsOpen(false)}>Architecture</a>
