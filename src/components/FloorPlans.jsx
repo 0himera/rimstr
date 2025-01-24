@@ -62,15 +62,26 @@ const FloorPlans = () => {
           
           <Swiper
             modules={[Navigation, Pagination]}
-            spaceBetween={20}
-            slidesPerView={4}
+            spaceBetween={30}
+            slidesPerView={1}
             navigation
             pagination={{ clickable: true }}
             className="h-[550px] rounded-lg overflow-hidden"
+            breakpoints={{
+              640: { // Для экранов шириной 640px и выше
+                slidesPerView: 2, // 2 слайда
+              },
+              1024: { // Для экранов шириной 1024px и выше
+                slidesPerView: 3, // 3 слайда
+              },
+              1280: { // Для экранов шириной 1280px и выше
+                slidesPerView: 4, // 4 слайда
+              },
+            }}
           >
             {floorPlans.map((plan) => (
               <SwiperSlide key={plan.id}>
-                <div className="bg-gray-100 w-[340px] rounded-lg p-3 flex flex-col items-center">
+                <div className="bg-aivory-200 w-auto rounded-lg p-3 flex flex-col items-center">
                   <img
                     src={plan.image}
                     alt={plan.name}
@@ -85,7 +96,7 @@ const FloorPlans = () => {
                       setSelectedPlan(plan);
                       setShowModal(true);
                     }}
-                    className="mt-4 w-64 bg-blue-500 text-white py-2 px-4 rounded-lg"
+                    className="mt-4 w-64 bg-grafit-100 text-white py-2 px-4 rounded-lg"
                   >
                     Узнать больше
                   </button>

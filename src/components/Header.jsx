@@ -39,11 +39,11 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden xl:flex items-center space-x-8">
-            <a href="#about" className={`hover:text-gray-600 ${isScrolled ? 'text-black' : 'text-white'}`}>About</a>
-            <a href="#advantages" className={`hover:text-gray-600 ${isScrolled ? 'text-black' : 'text-white'}`}>Advantages</a>
-            <a href="#architecture" className={`hover:text-gray-600 ${isScrolled ? 'text-black' : 'text-white'}`}>Architecture</a>
-            <a href="#living-areas" className={`hover:text-gray-600 ${isScrolled ? 'text-black' : 'text-white'}`}>Living Areas</a>
-            <a href="#floor-plans" className={`hover:text-gray-600 ${isScrolled ? 'text-black' : 'text-white'}`}>Floor Plans</a>
+            <a href="#about" className={`hover:text-gray-600 ${isScrolled ? 'text-black' : 'text-white'}`}>О Нас</a>
+            <a href="#advantages" className={`hover:text-gray-600 ${isScrolled ? 'text-black' : 'text-white'}`}>Приемущества</a>
+            <a href="#architecture" className={`hover:text-gray-600 ${isScrolled ? 'text-black' : 'text-white'}`}>Архитектура</a>
+            <a href="#living-areas" className={`hover:text-gray-600 ${isScrolled ? 'text-black' : 'text-white'}`}>Жилые зоны</a>
+            <a href="#floor-plans" className={`hover:text-gray-600 ${isScrolled ? 'text-black' : 'text-white'}`}>Планировки</a>
           </nav>
 
           {/* Phone Number */}

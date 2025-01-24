@@ -54,15 +54,12 @@ const LivingAreas = () => {
             className="lg:w-1/3"
           >
             <div className="rounded-border">
-              <h2 className="section-title">Living Areas</h2>
+              <h2 className="section-title">Жилые зоны</h2>
               <p className="section-text">
-                Experience unparalleled comfort in our thoughtfully designed living spaces.
-                Each apartment combines modern aesthetics with practical functionality,
-                creating the perfect environment for both relaxation and entertainment.
+                Спортивные залы, бассейны, рестораны и многое другое.                
               </p>
               <p className="section-text mt-4">
-                From spacious living rooms to elegant bedrooms, every space is crafted
-                to provide the ultimate living experience.
+                По всему периметру аллеи предусмотрены зоны отдыха, фонтаны и детские площадки.
               </p>
             </div>
           </motion.div>

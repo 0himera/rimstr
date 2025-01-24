@@ -30,11 +30,10 @@ const MainBanner = () => {
       >
         <div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-            Luxury Living Redefined
+           Апарт-комплекс<br/>"Алые паруса"
           </h1>
           <p className="text-xl md:text-2xl text-white max-w-2xl mx-auto">
-            Experience the perfect blend of comfort and sophistication
-            in our premium apartment hotel complex
+            Идеальное сочетание комфорта и утонченности
           </p>
         </div>
       </motion.div>

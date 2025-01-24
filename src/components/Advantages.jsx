@@ -15,16 +15,16 @@ const Advantages = () => {
 
   const advantages = [
     {
-      title: "Premium Location",
-      description: "Situated in the heart of the city with easy access to all amenities"
+      title: "Расположение",
+      description: "В минутe от моря"
     },
     {
-      title: "Luxury Amenities",
-      description: "State-of-the-art fitness center, spa, and concierge services"
+      title: "Спа и оздоровительные услуги",
+      description: "Спа-салоны, парные, хаммамы, массажные кабинеты."
     },
     {
-      title: "Smart Home Features",
-      description: "Advanced home automation and security systems"
+      title: "Современная система безопасности",
+      description: "Круглосуточное видеонаблюдение и служба охраны обеспечит защиту и создаст спокойную обстановку для проживания и отдыха."
     }
   ];
 
@@ -79,7 +79,7 @@ const Advantages = () => {
             className="lg:w-1/3"
           >
             <div className="rounded-border">
-              <h2 className="section-title">Our Advantages</h2>
+              <h2 className="section-title">Приемущества</h2>
               <div className="space-y-6">
                 {advantages.map((advantage, index) => (
                   <div key={index}>

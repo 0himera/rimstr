@@ -11,9 +11,9 @@ const Map3D = () => {
   const [selectedApartment, setSelectedApartment] = useState(null);
 
   const apartments = [
-    { id: 1, name: 'Студия', floorPlan: 'https://0.db-estate.cdn.pik-service.ru/layout/2022/12/19/2_sm_1ns1__3.9-1_s_a_90_zo4JwSk97wXCjfar.svg', position: { top: '58%', left: '30%' } },
-    { id: 2, name: '1 комн', floorPlan: 'https://0.db-estate.cdn.pik-service.ru/layout/2023/10/23/13_270_MfeH5hDVNEofHVyR.svg', position: { top: '50%', left: '60%' } },
-    { id: 3, name: '2 комн', floorPlan: 'https://0.db-estate.cdn.pik-service.ru/layout/2024/12/13/8_st_2ks_(6.3)t021_8.7x7.2_a_v1_270_ztNQcZAWm2X5hK9d.svg', position: { top: '75%', left: '45%' } },
+    { id: 1, name: 'Студия', floorPlan: '/studio32sqr.png', position: { top: '75%', left: '42%' } },
+    { id: 2, name: '1 комн', floorPlan: '/1com39.png', position: { top: '62%', left: '55%' } },
+    { id: 3, name: '2 комн', floorPlan: '/e2com66sqr2.png', position: { top: '53%', left: '28%' } },
   ];
 
   const handleMarkerClick = (apartment) => {
@@ -25,7 +25,7 @@ const Map3D = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white text-grafit-100">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -34,18 +34,14 @@ const Map3D = () => {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <h2 className="section-title">3D Complex Map</h2>
-          <p className="section-text max-w-3xl mx-auto mb-12">
-            Explore our complex in 3D. Click on different areas to view detailed floor plans
-            and learn more about each space.
-          </p>
+          <h2 className="section-title">Карта комплекса</h2>
           
           <div className="relative bg-gray-100 rounded-lg h-[600px] flex items-center justify-center">
             <img src="complex.png" alt="Complex" className="absolute inset-0 w-full h-full object-cover rounded-lg" />
             {apartments.map((apartment) => (
               <button
                 key={apartment.id}
-                className="absolute bg-primary-700 hover:bg-primary-600 easy-in duration-500 text-white p-2 rounded-full cursor-pointer"
+                className="absolute bg-grafit-100 hover:bg-primary-600 easy-in duration-500 text-white p-2 rounded-full cursor-pointer"
                 style={{ top: apartment.position.top, left: apartment.position.left }}
                 onClick={() => handleMarkerClick(apartment)}
               >

@@ -25,16 +25,15 @@ const Architecture = () => {
             className="lg:w-1/3"
           >
             <div className="rounded-border">
-              <h2 className="section-title">Architectural Excellence</h2>
+              <h2 className="section-title">Архитектурные особенности</h2>
               <p className="section-text">
-                Our complex represents the pinnacle of modern architectural design,
-                combining aesthetic beauty with functional excellence. Every detail
-                has been carefully considered to create a harmonious living environment.
+                Центральная аллея, соединяющая все блоки комплекса.
               </p>
               <p className="section-text mt-4">
-                The building's distinctive facade and thoughtful layout reflect our
-                commitment to creating spaces that inspire and enhance the lives of
-                our residents.
+                Панорамные окна открывают великолепные виды на окружающие пейзажи и наполняют пространства естественным светом, создавая атмосферу уюта и роскоши.
+              </p>
+              <p className="section-text mt-4">
+                Дизайнерские решения, воплощенные в каждой детали, придают интерьерам особую изысканность и индивидуальность.
               </p>
             </div>
           </motion.div>
