@@ -38,7 +38,7 @@ const Advantages = () => {
       alt: 'Advantage 2'
     },
     {
-      image: '/img (7).jpg',
+      image: '/img (7).png',
       alt: 'Advantage 3'
     }
   ];

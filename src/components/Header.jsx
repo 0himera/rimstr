@@ -62,7 +62,7 @@ const Header = () => {
           <a href="#architecture" className="text-gray-800 hover:text-gray-600 text-2xl mb-4" onClick={() => setIsOpen(false)}>Архитектура</a>
           <a href="#living-areas" className="text-gray-800 hover:text-gray-600 text-2xl mb-4" onClick={() => setIsOpen(false)}>Жилые зоны</a>
           <a href="#floor-plans" className="text-gray-800 hover:text-gray-600 text-2xl mb-4" onClick={() => setIsOpen(false)}>Планировки</a>
-          <a href="tel:+1234567890" className="text-gray-800 hover:text-gray-600 text-2xl mb-4">+7 (872) 262-22-30</a>
+          <a href="tel:+78722622230" className="text-gray-800 hover:text-gray-600 text-2xl mb-4">+7 (872) 262-22-30</a>
         </nav>
       </div>
     </header>

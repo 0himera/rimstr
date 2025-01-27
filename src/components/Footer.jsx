@@ -8,11 +8,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Contact Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Contact Us</h3>
-            <p className="mb-2">123 Luxury Avenue</p>
-            <p className="mb-2">New York, NY 10001</p>
-            <p className="mb-2">Phone: +7 (872) 262-22-30</p>
-            <p>Email: info@luxuryapartments.com</p>
+            <h3 className="text-xl font-bold mb-4">Адрес</h3>
+            <a href="https://yandex.ru/maps/-/CHa3yA7n"><p className="mb-2">г. Махачкала, Петра 1, 85</p></a>
+            <a href="tel:+78722622230" ><p className="mb-2">Phone: +7 (872) 262-22-30</p></a>
+            <p>Email: rimstroy05@mail.ru</p>
           </div>
 
           {/* Quick Links */}
@@ -27,19 +26,16 @@ const Footer = () => {
 
           {/* Social Media */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Follow Us</h3>
+            <h3 className="text-xl font-bold mb-4">Мы в соц сетях</h3>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-primary-300"><FaFacebook size={24} /></a>
-              <a href="#" className="hover:text-primary-300"><FaTwitter size={24} /></a>
-              <a href="#" className="hover:text-primary-300"><FaInstagram size={24} /></a>
-              <a href="#" className="hover:text-primary-300"><FaLinkedin size={24} /></a>
+              <a href="https://instagram.com/rim_stroy05" className="hover:text-primary-300"><FaInstagram size={24} /></a>
             </div>
           </div>
 
           {/* Newsletter */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Newsletter</h3>
-            <p className="mb-4">Subscribe to our newsletter for updates</p>
+            <h3 className="text-xl font-bold mb-4">Рассылка</h3>
+            <p className="mb-4">Подпишитесь на рассылку обновлений</p>
             <form className="space-y-2">
               <input
                 type="email"
