@@ -8,6 +8,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        poiret: ['"Poiret One"', 'serif'],
+        'great-vibes': ['"Great Vibes"', 'serif'],
       },
       colors: {
         primary: {
