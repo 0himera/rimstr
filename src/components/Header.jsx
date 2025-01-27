@@ -48,21 +48,21 @@ const Header = () => {
 
           {/* Phone Number */}
           <a
-            href="tel:+1234567890"
+            href="tel:+78722622230"
             className={`hidden md:block hover:text-gray-600 ${isScrolled ? 'text-black' : 'text-white'}`}
           >
-            +1 (234) 567-890
+            +7 (872) 262-22-30
           </a>
         </div>
 
         {/* Mobile Navigation */}
         <nav className={`md:hidden fixed top-0 left-0 w-full h-full bg-white flex flex-col items-center justify-center transition-transform duration-300 ${isOpen ? 'transform translate-x-0' : 'transform -translate-x-full'}`}>
-          <a href="#about" className="text-gray-800 hover:text-gray-600 text-2xl mb-4" onClick={() => setIsOpen(false)}>About</a>
-          <a href="#advantages" className="text-gray-800 hover:text-gray-600 text-2xl mb-4" onClick={() => setIsOpen(false)}>Advantages</a>
-          <a href="#architecture" className="text-gray-800 hover:text-gray-600 text-2xl mb-4" onClick={() => setIsOpen(false)}>Architecture</a>
-          <a href="#living-areas" className="text-gray-800 hover:text-gray-600 text-2xl mb-4" onClick={() => setIsOpen(false)}>Living Areas</a>
-          <a href="#floor-plans" className="text-gray-800 hover:text-gray-600 text-2xl mb-4" onClick={() => setIsOpen(false)}>Floor Plans</a>
-          <a href="tel:+1234567890" className="text-gray-800 hover:text-gray-600 text-2xl mb-4">+1 (234) 567-890</a>
+          <a href="#about" className="text-gray-800 hover:text-gray-600 text-2xl mb-4" onClick={() => setIsOpen(false)}>О Нас</a>
+          <a href="#advantages" className="text-gray-800 hover:text-gray-600 text-2xl mb-4" onClick={() => setIsOpen(false)}>Приемущества</a>
+          <a href="#architecture" className="text-gray-800 hover:text-gray-600 text-2xl mb-4" onClick={() => setIsOpen(false)}>Архитектура</a>
+          <a href="#living-areas" className="text-gray-800 hover:text-gray-600 text-2xl mb-4" onClick={() => setIsOpen(false)}>Жилые зоны</a>
+          <a href="#floor-plans" className="text-gray-800 hover:text-gray-600 text-2xl mb-4" onClick={() => setIsOpen(false)}>Планировки</a>
+          <a href="tel:+1234567890" className="text-gray-800 hover:text-gray-600 text-2xl mb-4">+7 (872) 262-22-30</a>
         </nav>
       </div>
     </header>

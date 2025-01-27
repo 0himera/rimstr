@@ -11,18 +11,17 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">Contact Us</h3>
             <p className="mb-2">123 Luxury Avenue</p>
             <p className="mb-2">New York, NY 10001</p>
-            <p className="mb-2">Phone: +1 (234) 567-890</p>
+            <p className="mb-2">Phone: +7 (872) 262-22-30</p>
             <p>Email: info@luxuryapartments.com</p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="#about" className="hover:text-primary-300">About</a></li>
-              <li><a href="#advantages" className="hover:text-primary-300">Advantages</a></li>
-              <li><a href="#architecture" className="hover:text-primary-300">Architecture</a></li>
-              <li><a href="#floor-plans" className="hover:text-primary-300">Floor Plans</a></li>
+              <li><a href="#about" className="hover:text-primary-300">О Нас</a></li>
+              <li><a href="#advantages" className="hover:text-primary-300">Приемущества</a></li>
+              <li><a href="#architecture" className="hover:text-primary-300">Архитектура</a></li>
+              <li><a href="#floor-plans" className="hover:text-primary-300">Планировки</a></li>
             </ul>
           </div>
 
@@ -58,7 +57,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 pt-8 border-t border-primary-800 text-center">
-          <p>&copy; {new Date().getFullYear()} Premium Apartment Hotel. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Алые Паруса. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -11,9 +11,9 @@ const Map3D = () => {
   const [selectedApartment, setSelectedApartment] = useState(null);
 
   const apartments = [
-    { id: 1, name: 'Студия', floorPlan: '/studio32sqr.png', position: { top: '75%', left: '42%' } },
-    { id: 2, name: '1 комн', floorPlan: '/1com39.png', position: { top: '62%', left: '55%' } },
-    { id: 3, name: '2 комн', floorPlan: '/e2com66sqr2.png', position: { top: '53%', left: '28%' } },
+    { id: 1, name: 'Студия', floorPlan: '/floor3d (1).jpg', position: { top: '75%', left: '42%' } },
+    { id: 2, name: '1 комн', floorPlan: '/floor3d (3).jpg', position: { top: '62%', left: '55%' } },
+    { id: 3, name: '2 комн', floorPlan: '/floor3d (2).jpg', position: { top: '53%', left: '28%' } },
   ];
 
   const handleMarkerClick = (apartment) => {
@@ -57,7 +57,7 @@ const Map3D = () => {
           <div className="bg-white p-4 rounded-lg max-w-lg w-full z-50">
             <h3 className="text-xl mb-4">{selectedApartment.name}</h3>
             <img src={selectedApartment.floorPlan} alt={`${selectedApartment.name} Floor Plan`} className="w-full h-auto mb-4" />
-            <button onClick={closeModal} className="bg-primary-700 text-white px-4 py-2 rounded">Close</button>
+            <button onClick={closeModal} className="bg-primary-700 text-white px-4 py-2 rounded">Закрыть</button>
           </div>
         </div>
       )}

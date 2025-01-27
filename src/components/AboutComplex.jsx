@@ -51,11 +51,9 @@ const AboutComplex = () => {
               navigation
               pagination={{ clickable: true }}
               autoplay={{ delay: 5000 }}
-              className="h-[500px] rounded-lg overflow-hidden"
+              className="h-[400px] sm:h-[600px] rounded-lg overflow-hidden"
             >
-              {['https://images.unsplash.com/photo-1600585154340-be6161a56a0c',
-                'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c',
-                'https://app.giz.ai/api/tempFiles/local+OiktGKV-7CW3IbCTd7WZV.webp'].map((index) => (
+              {['/img (11).jpg', '/img (8).jpg', '/img (12).jpg'].map((index) => (
                   <SwiperSlide key={index}>
                     <img
                       src={index}

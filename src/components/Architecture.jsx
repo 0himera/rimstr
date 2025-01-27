@@ -51,9 +51,9 @@ const Architecture = () => {
               navigation
               pagination={{ clickable: true }}
               autoplay={{ delay: 5000 }}
-              className="h-[500px] rounded-lg overflow-hidden"
+              className="h-[400px] lg:h-[500px] rounded-lg overflow-hidden"
             >
-              {['https://app.giz.ai/api/tempFiles/local+OiktGKV-7CW3IbCTd7WZV.webp', 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3', 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c'].map((index) => (
+              {['/img.jpg', '/img (5).jpg', '/img (6).jpg'].map((index) => (
                 <SwiperSlide key={index}>
                   <img
                     src={index}

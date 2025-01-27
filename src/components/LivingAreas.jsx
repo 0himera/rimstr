@@ -30,11 +30,9 @@ const LivingAreas = () => {
               navigation
               pagination={{ clickable: true }}
               autoplay={{ delay: 5000 }}
-              className="h-[500px] rounded-lg overflow-hidden"
+              className="h-[400px] md:h-[500px] rounded-lg overflow-hidden"
             >
-              {['https://images.unsplash.com/photo-1600210492493-0946911123ea',
-    'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87',
-    'https://images.unsplash.com/photo-1600210491369-e753d80a41f3'].map((index) => (
+              {['/img (10).jpg', '/img.webp', '/img (11).jpg'].map((index) => (
                 <SwiperSlide key={index}>
                   <img
                     src={index}

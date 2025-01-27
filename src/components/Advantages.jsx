@@ -16,7 +16,7 @@ const Advantages = () => {
   const advantages = [
     {
       title: "Расположение",
-      description: "В минутe от моря"
+      description: "Первая береговая линия"
     },
     {
       title: "Спа и оздоровительные услуги",
@@ -30,15 +30,15 @@ const Advantages = () => {
 
   const slides = [
     {
-      image: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea',
+      image: '/img (1).jpg',
       alt: 'Advantage 1'
     },
     {
-      image: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea',
+      image: '/img (3).jpg',
       alt: 'Advantage 2'
     },
     {
-      image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3',
+      image: '/img (7).jpg',
       alt: 'Advantage 3'
     }
   ];
@@ -46,14 +46,14 @@ const Advantages = () => {
   return (
     <section id="advantages" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row gap-12">
+        <div className="flex flex-col lg:flex-row gap-12 lg:items-center lg:justify-center">
           
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="lg:w-2/3"
-          >
+            className="lg:w-2/5"
+          > 
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
               spaceBetween={30}
@@ -61,7 +61,7 @@ const Advantages = () => {
               navigation
               pagination={{ clickable: true }}
               autoplay={{ delay: 3000 }}
-              className="h-[660px]"
+              className="h-[500px] sm:h-[600px] rounded-lg overflow-hidden"
             >
               {slides.map((slide, index) => (
                 <SwiperSlide key={index}>

@@ -29,10 +29,10 @@ const MainBanner = () => {
         className="relative h-full flex items-center justify-center text-center px-4"
       >
         <div>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-           Апарт-комплекс<br/>"Алые паруса"
+          <h1 className="font-poiret text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6">
+           Апарт комплекс<br/>"Алые паруса"
           </h1>
-          <p className="text-xl md:text-2xl text-white max-w-2xl mx-auto">
+          <p className="text-xl font-great-vibes md:text-4xl text-white max-w-2xl mx-auto">
             Идеальное сочетание комфорта и утонченности
           </p>
         </div>
