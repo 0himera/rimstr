@@ -10,7 +10,7 @@ const Map = () => {
         <div className="relative rounded-lg overflow-hidden shadow-lg max-h-[500px]">
           <img src="/map.png" alt="" className="object-center" />
           <button
-            className="absolute bg-green-500 hover:bg-primary-600 easy-in duration-500 text-white py-2 px-4 rounded-full cursor-pointer z-50"
+            className="absolute bg-green-500 hover:bg-primary-600 easy-in duration-500 text-white py-2 px-4 rounded-full cursor-pointer z-40"
             style={{ top: "50%", left: "68%" }}
             onClick={() => window.open("https://yandex.ru/maps/?ll=47.707699%2C42.811822&mode=routes&rtext=~42.811491%2C47.711559&rtt=auto&ruri=~&z=14.4", "_blank")}
           >
