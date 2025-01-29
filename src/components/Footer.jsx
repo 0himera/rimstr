@@ -9,13 +9,15 @@ const Footer = () => {
           {/* Contact Info */}
           <div>
             <h3 className="text-xl font-bold mb-4">Адрес</h3>
-            <a href="https://yandex.ru/maps/-/CHa3yA7n"><p className="mb-2">г. Махачкала, Петра 1, 85</p></a>
-            <a href="tel:+78722622230" ><p className="mb-2">Phone: +7 (872) 262-22-30</p></a>
+            <a href="https://yandex.ru/maps/-/CHa3yA7n"><p className="mb-2">Офис продаж: г. Махачкала, Петра 1, 85<br/>Тц Берега, 3 этаж</p></a>
+            <p className="mb-2">Стоительный обьект: РД Карабудахкентский район<br/>Турали 6е, 21 корпус</p>
+            <a href="tel:622230" ><p className="mb-2">Тел: 62-22-30</p></a>
             <p>Email: rimstroy05@mail.ru</p>
           </div>
 
           {/* Quick Links */}
           <div>
+            <h3 className="text-xl font-bold mb-4">Гид по сайту</h3>
             <ul className="space-y-2">
               <li><a href="#about" className="hover:text-primary-300">О Нас</a></li>
               <li><a href="#advantages" className="hover:text-primary-300">Приемущества</a></li>
