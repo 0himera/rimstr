@@ -36,19 +36,43 @@ const Footer = () => {
 
           {/* Newsletter */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Рассылка</h3>
-            <p className="mb-4">Подпишитесь на рассылку обновлений</p>
-            <form className="space-y-2">
+            <h3 className="text-xl font-bold mb-4">Узнать подробнее</h3>
+            <form className="space-y-2" onSubmit={async (event) => {
+              event.preventDefault();
+              const formData = new FormData(event.target);
+                const name = formData.get("name");
+                const phone = formData.get("phone");
+
+              const response = await fetch('/send', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams({ name, phone }),
+              });
+              const result = await response.json();
+                if (result.status === "ok") {
+                  alert("Данные успешно отправлены!");
+                  event.target.reset();
+                } else {
+                  alert("Ошибка при отправке данных.");
+                }
+            }}>
               <input
-                type="email"
-                placeholder="Enter your email"
+                type="name"
+                name="name"
+                placeholder="Ваше имя"
+                className="w-full px-4 py-2 rounded-lg bg-primary-800 text-white placeholder-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500"
+              />
+              <input
+                type="phone"
+                name="phone"
+                placeholder="Ваш телефон"
                 className="w-full px-4 py-2 rounded-lg bg-primary-800 text-white placeholder-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500"
               />
               <button
                 type="submit"
                 className="w-full px-4 py-2 bg-primary-700 rounded-lg hover:bg-primary-600 transition-colors"
               >
-                Subscribe
+                Отправить
               </button>
             </form>
           </div>
