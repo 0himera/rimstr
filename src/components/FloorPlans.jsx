@@ -112,26 +112,43 @@ const FloorPlans = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-8 max-w-md w-full mx-4">
             <h3 className="text-2xl font-bold mb-4">{selectedPlan.name}</h3>
-            <form className="space-y-4">
+            <form
+              className="space-y-4"
+              onSubmit={async (event) => {
+                event.preventDefault(); // Останавливаем стандартную отправку формы
+                const formData = new FormData(event.target);
+                const name = formData.get("name");
+                const phone = formData.get("phone");
+
+                const response = await fetch("/send", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                  body: new URLSearchParams({ name, phone }),
+                });
+
+                const result = await response.json();
+                if (result.status === "ok") {
+                  alert("Данные успешно отправлены!");
+                  event.target.reset();
+                } else {
+                  alert("Ошибка при отправке данных.");
+                }
+              }}
+            >
               <div>
                 <label className="block text-sm font-medium text-gray-700">Имя</label>
                 <input
                   type="text"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring focus:ring-primary-200"
+                  name="name"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-md focus:border-primary-500 focus:ring focus:ring-primary-200"
                 />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700">Номер</label>
                 <input
                   type="tel"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring focus:ring-primary-200"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">Почта</label>
-                <input
-                  type="email"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring focus:ring-primary-200"
+                  name="phone"
+                  className="mt-1 block w-full rounded-md border-gray-500 shadow-md focus:border-primary-500 focus:ring focus:ring-primary-200"
                 />
               </div>
               <div className="flex justify-end space-x-4">
