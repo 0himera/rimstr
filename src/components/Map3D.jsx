@@ -35,7 +35,7 @@ const Map3D = () => {
           className="text-center"
         >
           <h2 className="section-title">Карта комплекса</h2>
-          
+
           <div className="relative bg-gray-100 rounded-lg h-[600px] flex items-center justify-center">
             <img src="complex.png" alt="Complex" className="absolute inset-0 w-full h-full object-cover rounded-lg" />
             {apartments.map((apartment) => (
@@ -53,12 +53,21 @@ const Map3D = () => {
       </div>
 
       {selectedApartment && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-white p-4 rounded-lg max-w-lg w-full z-50">
-            <h3 className="text-xl mb-4">{selectedApartment.name}</h3>
-            <img src={selectedApartment.floorPlan} alt={`${selectedApartment.name} Floor Plan`} className="w-full h-auto mb-4" />
-            <button onClick={closeModal} className="bg-primary-700 text-white px-4 py-2 rounded">Закрыть</button>
-          </div>
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[100] p-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="bg-white rounded-2xl shadow-2xl p-6 max-w-4xl w-full relative overflow-hidden flex flex-col items-center"
+          >
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors bg-white rounded-full p-1"
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+            <h3 className="text-2xl font-bold mb-4">{selectedApartment.name}</h3>
+            <img src={selectedApartment.floorPlan} alt={`${selectedApartment.name} Floor Plan`} className="max-h-[80vh] w-auto object-contain rounded-lg shadow-md" />
+          </motion.div>
         </div>
       )}
     </section>

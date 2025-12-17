@@ -9,8 +9,8 @@ const Footer = () => {
           {/* Contact Info */}
           <div>
             <h3 className="text-xl font-bold mb-4">Адрес</h3>
-            <a href="https://yandex.ru/maps/-/CHa3yA7n"><p className="mb-2">Офис продаж: г. Махачкала, Петра 1, 85<br/>Тц Берега, 3 этаж</p></a>
-            <p className="mb-2">Стоительный обьект: РД Карабудахкентский район<br/>Турали 6е, 21 корпус</p>
+            <a href="https://yandex.ru/maps/-/CHa3yA7n"><p className="mb-2">Офис продаж: г. Махачкала, Петра 1, 85<br />Тц Берега, 3 этаж</p></a>
+            <p className="mb-2">Стоительный обьект: РД Карабудахкентский район<br />Турали 6е, 21 корпус</p>
             <a href="tel:622230" ><p className="mb-2">Тел: 62-22-30</p></a>
             <p>Email: rimstroy05@mail.ru</p>
           </div>
@@ -39,38 +39,74 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">Узнать подробнее</h3>
             <form className="space-y-2" onSubmit={async (event) => {
               event.preventDefault();
-              const formData = new FormData(event.target);
-                const name = formData.get("name");
-                const phone = formData.get("phone");
+              const form = event.target;
+              const submitBtn = form.querySelector('button[type="submit"]');
+              const originalText = submitBtn.innerText;
 
-              const response = await fetch('/send', {
-                method: 'POST',
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams({ name, phone }),
-              });
-              const result = await response.json();
+              submitBtn.disabled = true;
+              submitBtn.innerText = "...";
+
+              const formData = new FormData(form);
+              const data = {
+                name: formData.get("name"),
+                phone: formData.get("phone"),
+                email: formData.get("email"),
+                source: "Футер"
+              };
+
+              try {
+                const response = await fetch('/send', {
+                  method: 'POST',
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify(data),
+                });
+                const result = await response.json();
                 if (result.status === "ok") {
-                  alert("Данные успешно отправлены!");
-                  event.target.reset();
+                  submitBtn.innerText = "✓";
+                  submitBtn.classList.remove("bg-primary-700", "hover:bg-primary-600");
+                  submitBtn.classList.add("bg-green-600", "hover:bg-green-500");
+                  setTimeout(() => {
+                    submitBtn.innerText = originalText;
+                    submitBtn.classList.add("bg-primary-700", "hover:bg-primary-600");
+                    submitBtn.classList.remove("bg-green-600", "hover:bg-green-500");
+                    submitBtn.disabled = false;
+                    form.reset();
+                  }, 2000);
                 } else {
-                  alert("Ошибка при отправке данных.");
+                  throw new Error("Failed");
                 }
+              } catch (e) {
+                alert("Ошибка отправки");
+                submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
+              }
             }}>
               <input
-                type="name"
+                type="text"
                 name="name"
+                required
                 placeholder="Ваше имя"
-                className="w-full px-4 py-2 rounded-lg bg-primary-800 text-white placeholder-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                className="w-full px-4 py-2 rounded-lg bg-primary-800 text-white placeholder-primary-400 border border-transparent focus:border-white focus:outline-none focus:ring-1 focus:ring-white transition-all"
               />
               <input
-                type="phone"
+                type="tel"
                 name="phone"
+                required
                 placeholder="Ваш телефон"
-                className="w-full px-4 py-2 rounded-lg bg-primary-800 text-white placeholder-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                onInput={(e) => {
+                  e.target.value = e.target.value.replace(/[^0-9+()\-\s]/g, '');
+                }}
+                className="w-full px-4 py-2 rounded-lg bg-primary-800 text-white placeholder-primary-400 border border-transparent focus:border-white focus:outline-none focus:ring-1 focus:ring-white transition-all"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email (необязательно)"
+                className="w-full px-4 py-2 rounded-lg bg-primary-800 text-white placeholder-primary-400 border border-transparent focus:border-white focus:outline-none focus:ring-1 focus:ring-white transition-all"
               />
               <button
                 type="submit"
-                className="w-full px-4 py-2 bg-primary-700 rounded-lg hover:bg-primary-600 transition-colors"
+                className="w-full px-4 py-2 bg-primary-700 rounded-lg hover:bg-primary-600 text-white font-medium transition-colors"
               >
                 Отправить
               </button>
