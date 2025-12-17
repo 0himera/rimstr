@@ -12,12 +12,11 @@ export default async function handler(req, res) {
     }
 
     const message = `
-🔔 *Новая заявка (Vercel)!*
+🔔 *Новая заявка!*
 
 👤 *Имя:* ${name}
 📞 *Телефон:* ${phone}
 📧 *Email:* ${email || 'Не указан'}
-📍 *Источник:* ${source || 'Сайт'}
   `;
 
     const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
